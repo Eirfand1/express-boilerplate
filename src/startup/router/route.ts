@@ -12,14 +12,14 @@ const routerSetup = (app: Express)=> {
       res.json(results)
    })
 
-   // app.get("/:id", async (req: any, res: Response)=>{
-   //    const db = getDb()
-   //    const collection = db.collection("mahasiswa")
-   //    const id = new ObjectId(req.params.id);
-   //    let results = await collection.findOne({_id: id})
+   app.get("/:id", async (req: any, res: Response)=>{
+      const db = getDb()
+      const collection = db.collection("mahasiswa")
+      const id = new ObjectId(req.params.id);
+      let results = await collection.findOne({_id: id})
 
-   //    res.json([results])
-   // }) 
+      res.json([results])
+   }) 
 
 }
 
