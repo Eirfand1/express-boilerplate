@@ -2,8 +2,8 @@ import { MongoClient, Db } from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 
-const connectionString: string = process.env.MONGO_URI!;
-const client: MongoClient = new MongoClient(connectionString);
+const host: string = process.env.MONGO_URI!;
+const client: MongoClient = new MongoClient(host);
 let db: Db;
 
 async function connectToDatabase(): Promise<Db> {
