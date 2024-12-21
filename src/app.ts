@@ -6,4 +6,5 @@ import routerSetup from './startup/router/route'
 
 appSetup(app)
 securitySetup(app, express)
-routerSetup(app)
+routerSetup(app, express)
+

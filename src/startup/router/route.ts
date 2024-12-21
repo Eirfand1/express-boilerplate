@@ -1,25 +1,16 @@
 import { Express, Request, Response } from "express";
-import getDb from "../../db/mongo";
-import { ObjectId } from "mongodb";
+import absensiRoute from './absensiRoute'
+import { verifyAdmin, verifyToken } from "../middlewares/authMiddlewares";
 
-const routerSetup = (app: Express)=> {
-   app.get("/", async (req: Request, res: Response)=>{
-      const db = getDb()
-      let collection = db.collection("mahasiswa")
-      let results = await collection.find({})
-      .toArray()
-      
-      res.json(results)
+const routerSetup = (app: Express, express: any)=> {
+   app.get("/", async (req: Request, res: Response)=> {
+      res.status(200).json({
+         success: true,
+         message: "yoo" 
+      });
    })
-   
-   app.get("/:id", async (req: any, res: Response)=>{
-      const db = getDb()
-      const collection = db.collection("mahasiswa")
-      const id = new ObjectId(req.params.id);
-      let results = await collection.findOne({_id: id})
-      
-      res.json([results])
-   }) 
+
+   app.use("/api/absensi",verifyAdmin,absensiRoute)
 }
 
 export default routerSetup

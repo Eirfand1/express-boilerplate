@@ -5,6 +5,7 @@ const securitySetup = (app: Express, express: any) => {
    app
    .use(cors())
    .use(express.json())
+   .use(express.urlencoded({ extended: true }))
 }
 
 export default securitySetup
