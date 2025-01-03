@@ -1,5 +1,5 @@
-import { prisma } from "../../../prisma/client";
 import { AbsensiDTO, UpdateAbsensiDTO } from "../utils/types";
+import { prisma } from "../application/database";
 
 export class DataRepository {
   async findAll() {
@@ -12,11 +12,11 @@ export class DataRepository {
         status: absensiDTO.status,
         password: absensiDTO.password
 
-      } as any 
+      } as any
     });
   }
 
-  async update(absensiDTO: UpdateAbsensiDTO){
+  async update(absensiDTO: UpdateAbsensiDTO) {
     return await prisma.absensi.update({
       where: {
         id: absensiDTO.id
