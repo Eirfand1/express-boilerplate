@@ -1,31 +1,31 @@
 ## My express boilerplate
 
+## Struktur Folder
 ```
-
-EXPRESS-BOILERPLATE/
-├── node_modules/
-├── prisma/
-│   ├── client/
-│   │   └── index.ts
-│   ├── migrations/
-│   │   └── 20241201032159_...
-│   └── schema.prisma
-├── src/
-│   ├── db/
-│   │   └── mongo.ts
-│   └── startup/
-│       ├── handlers/
-│       │   └── DataHandler.ts
-│       ├── middlewares/
-│       │   └── authMiddleware.ts
-│       ├── repositories/
-│       ├── router/
-│       ├── services/
-│       │   └── dataService.ts
-│       └── utils/
-│           ├── types.ts
-│           └── init.ts
+src
+├── application
+│   └── database.ts
+│   └── init.ts
+│   └── security.ts
+├── handlers
+│   └── DataHandler.ts
+├── middlewares
+│   └── authMiddlewares.ts
+├── repositories
+│   └── dataRepository.ts
+├── router
+│   └── absensiRoute.ts
+├── services
+│   └── dataService.ts
+├── utils
+│   └── types.ts
+├── app.ts
+├── Dockerfile
+├── README.md
 ├── docker-compose.yml
-└── Dockerfile
-
+├── nodemon.json
+├── package-lock.json
+├── package.json
+└── tsconfig.json
 ```
+
